@@ -11,8 +11,10 @@ function CatogeryPage() {
   const { catogory } = useParams();
   const [catogeryProducts, setCatogeryProducts] = useState({});
   const [loading, setLoading] = useState(true);
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/category/${catogory}`)
+    fetch(`${apiUrl}/products/category/${catogory}`)
       .then((res) => res.json())
       .then((data) => setCatogeryProducts(data))
       .catch((error) =>

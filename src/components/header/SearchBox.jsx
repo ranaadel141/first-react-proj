@@ -6,6 +6,7 @@ function SearchBox() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const [suggestions, setSuggestions] = useState([]);
   const handleSubmit = (e) => {
@@ -25,7 +26,7 @@ function SearchBox() {
 
       try {
         const response = await fetch(
-          `https://dummyjson.com/products/search?q=${encodeURIComponent(searchTerm)}`,
+          `${apiUrl}/products/search?q=${encodeURIComponent(searchTerm)}`
         );
         const data = await response.json();
         setSuggestions(data.products.slice(0, 5) || []);
@@ -39,7 +40,6 @@ function SearchBox() {
     }, 300);
     return () => clearTimeout(timeout);
   }, [searchTerm]);
-  console.log(suggestions);
 
   useEffect(() => {
     setSuggestions([]);

@@ -13,11 +13,12 @@ function ProductDetails() {
   const [loading, setLoading] = React.useState(true);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [loadingRelated, setLoadingRelated] = useState(true);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   React.useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`https://dummyjson.com/products/${id.id}`);
+        const res = await fetch(`${apiUrl}/products/${id.id}`);
         const data = await res.json();
         setProduct(data);
         fetchRelatedProducts(data.category);
@@ -29,7 +30,7 @@ function ProductDetails() {
     };
 
     const fetchRelatedProducts = async (category) => {
-      fetch(`https://dummyjson.com/products/category/${category}`)
+      fetch(`${apiUrl}/products/category/${category}`)
         .then((res) => res.json())
         .then((data) => {
           setRelatedProducts(data.products);

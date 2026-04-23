@@ -7,7 +7,6 @@ import PageTransition from "../../components/PageTransition";
 
 function Cart() {
     const {cartItems , increaseQuantity , decreaseQuantity , removeFromCart} = useContext(CartContext)
-  console.log(cartItems);
 
     const total = cartItems.reduce((acc , item) => acc + item.price * item.quantity, 0)
 

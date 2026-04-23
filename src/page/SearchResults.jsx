@@ -8,13 +8,13 @@ function SearchResults() {
   const [results, setResults] = useState([]);
   const query = new URLSearchParams(useLocation().search).get("query");
   const [loading, setLoading] = useState(true);
-  console.log(results);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
         const response = await fetch(
-          `https://dummyjson.com/products/search?q=${encodeURIComponent(query)}`,
+          `${apiUrl}/products/search?q=${encodeURIComponent(query)}`,
         );
         const data = await response.json();
         setResults(data.products || []);

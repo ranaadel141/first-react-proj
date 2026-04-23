@@ -18,13 +18,14 @@ function BottomHeader() {
   const location = useLocation();
   const [categories, setCategories] = useState([]);
   const [isCatogeryOpen, setIsCatogeryOpen] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     setIsCatogeryOpen(false);
   }, [location]);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products/categories")
+    fetch(`${apiUrl}/products/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);

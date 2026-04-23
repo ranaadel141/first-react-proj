@@ -19,6 +19,7 @@ function Home() {
   const [products, setProducts] = useState({});
 
   const [loading, setLoading] = useState(true);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -26,7 +27,7 @@ function Home() {
         const results = await Promise.all(
           categories.map(async (category) => {
             const res = await fetch(
-              `https://dummyjson.com/products/category/${category}`,
+              `${apiUrl}/products/category/${category}`
             );
             const data = await res.json();
             return { [category]: data.products };
