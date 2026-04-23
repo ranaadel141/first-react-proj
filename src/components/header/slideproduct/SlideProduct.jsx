@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from './Product'
-import './slideProduct.css'
+import './slideproduct.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
