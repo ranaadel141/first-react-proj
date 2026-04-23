@@ -1,0 +1,217 @@
+:root {
+    --main-color: #0090f0;
+    --p-color: #7b7b7b;
+    --bg-color: #f3f3f3;
+    --white-color: #fff;
+    --color-heading: #253237;
+    --border-color: #d6d6d5;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--white-color);
+}
+.top-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.top-header .container .logo {
+    width: 160px;
+}
+
+.top-header .container .search-box {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+    background: var(--bg-color);
+}
+
+.top-header .container .search-box input {
+    height: 45px;
+    width: 440px;
+    padding: 5px 15px 5px 20px;
+    background: var(--bg-color);
+    border-radius: 30px 0 0 30px;
+}
+
+.top-header .container .search-box button {
+    height: 45px;
+    width: 60px;
+    background: var(--main-color);
+    color: var(--white-color);
+    font-size: 18px;
+    padding: 5px 15px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+}
+
+.header-icons {
+    display: flex;
+    gap: 30px;
+}
+
+.header-icons .icon {
+    cursor: pointer;
+    position: relative;
+
+}
+
+.top-header .header-icons .icon svg {
+    font-size: 30px;
+}
+
+.header-icons .icon .count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--main-color);
+    color: var(--white-color);
+    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.bottom-header {
+    background-color: var(--main-color);
+}
+
+.bottom-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom-header .container .nav {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-header .catogery-nav {
+    width: 220px;
+    height: 100%;
+    position: relative;
+}
+
+.bottom-header .container .catogery-nav .nav-catogery-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background: var(--white-color);
+    border-top: 0;
+    flex-direction: column;
+    display: flex;
+    overflow-y: auto;
+    max-height: 400px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.3s ease;
+    z-index: 1000;
+
+}
+
+.bottom-header .catogery-nav .nav-catogery-list.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.bottom-header .catogery-nav .nav-catogery-list a {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+.bottom-header .catogery-nav .nav-catogery-list a:last-child {
+    border-bottom: none;
+}
+
+.bottom-header .catogery-nav .catogery-btn {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: var(--main-color);
+    padding: 5px 15px;
+    
+}
+
+.bottom-header .catogery-nav .catogery-btn svg,
+.bottom-header .catogery-nav .catogery-btn p {
+    color: var(--white-color);
+    font-size: 16px;
+}
+
+.bottom-header .nav-links {
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+}
+
+.bottom-header .nav-links li {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    padding: 12px 25px;
+}
+
+.bottom-header .nav .nav-links li a {
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.bottom-header .nav .nav-links li.active {
+    background: #54abe5;
+}
+
+.bottom-header .nav-regs-icon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bottom-header .nav-regs-icon a {
+    color: var(--white-color);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.serachBox-Contaienr{
+    position: relative;
+}
+
+.suggestions{
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    list-style: none;
+    border: 1px solid var(--border_color);
+}
+.suggestions li{
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid var(--border_color);
+}
+.suggestions li span{
+    font-size: 14px;
+}
+.suggestions li img{
+    width: 30px;
+}
